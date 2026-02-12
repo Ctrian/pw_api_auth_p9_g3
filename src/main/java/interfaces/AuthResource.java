@@ -21,7 +21,8 @@ public class AuthResource {
     @Path("/token")
     public TokenResponse token(
             @QueryParam("user") String user,
-            @QueryParam("password") String password) {
+            @QueryParam("password") String password,
+            @QueryParam("tiempo_vigencia") Long tiempoVigencia) {
 
         // Aqui es donde se compara el password y usuario contra la base
         UsuarioRepresentation usuario = usuarioService.findByUsuario(user);
@@ -36,7 +37,9 @@ public class AuthResource {
 
         if (ok) {
             String issuer = "inscripcion-auth";
-            long ttl = 8000;
+            
+            // 2. Usamos el valor recibido. Si viene nulo o es 0, usamos 8000 por defecto.
+            long ttl = (tiempoVigencia != null && tiempoVigencia > 0) ? tiempoVigencia : 8000;
 
             Instant now = Instant.now();
             Instant exp = now.plusSeconds(ttl);
