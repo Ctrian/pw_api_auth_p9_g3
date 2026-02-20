@@ -36,7 +36,7 @@ public class AuthResource {
         }
 
         if (ok) {
-            String issuer = "inscripcion-auth";
+            String issuer = "concesionaria-auth";
             
             // 2. Usamos el valor recibido. Si viene nulo o es 0, usamos 8000 por defecto.
             // long ttl = (tiempoVigencia != null && tiempoVigencia > 0) ? tiempoVigencia : 8000;

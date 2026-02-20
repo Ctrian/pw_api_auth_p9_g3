@@ -1,13 +1,15 @@
-### Guardar un vehiculo
+### Guardar
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjb25jZXNpb25hcmlhLWF1dGgiLCJzdWIiOiJhbmRyZXMiLCJncm91cHMiOlsiYWRtaW4iXSwiaWF0IjoxNzcxNTU4NzkxLCJleHAiOjE3NzE1NjY3OTEsImp0aSI6IjViOGM3OTBjLTY1YzUtNGM1OC1hMDBhLTJmNGIwZmMxZmJhMiJ9.mf4pA8injDvDvN8HyHBAS23QxK8EtCGN8k5u9GpmeZns2M4eZSiywYKPCHvF4OHo6LUXmglawCVHoyEDEs_YL9XWY5u3wbM3mwCa5QzfqzkYCUy6_exiI-wtyQ44Cmy_s5WcMYQvdO3z-WvnvjzWoVnDvT1hJtWJQKGlOTfSN1hPPbsd4KtbNSkJR0PIGHMoqcVmNNi_1pZ2cwyw3S6u6a1curMLzXaQTUtPfdrdVwf-Jk1J2DacRAIBn-SraablOr6txjzPnjMhqYLFLmMHTP8VMmyq-w73LzyOoYuRqB-XQ48o_TLNwtku7-0rNHjgEhIo9niTk9ISRZidT4yUTQ
 POST http://localhost:8081/concesionaria/api/v1.0/vehiculos/guardar
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "marca": "Toyota",
-  "modelo": "Hilux",
+  "marca": "Nissan",
+  "modelo": "GTR",
   "chasis": "93HB4J82KLS9023",
-  "fechaFabricacion": "2023-05-15T10:30:00",
-  "fechaMatricula": "2024-01-20T08:00:00"
+  "fechaFabricacion": "2023-05-15",
+  "fechaMatricula": "2024-01-20"
 }
 
 ### Obtener el Token
